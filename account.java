@@ -13,7 +13,7 @@ public class Account {
 
     public boolean validatePIN(int userPIN){
         return userPIN == pin; 
-
+    }
     public double getAvailableBalance(){
         return availableBalance;
     }

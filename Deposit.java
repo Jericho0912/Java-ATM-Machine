@@ -2,6 +2,8 @@ public class Deposit extends Transaction {
     private double amount;
     private Keypad keypad;
     private DepositSlot depositSlot;
+    private final static int CANCELED = 0;
+
 
     public Deposit(int userAccountNumber, Screen atmScreen, BankDatabase atmBankDatabase, Keypad atmKeypad, DepositSlot atmDepositSlot) {
         super(userAccountNumber, atmScreen, atmBankDatabase);

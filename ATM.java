@@ -54,7 +54,7 @@ public class ATM{
         }
     }
     private void performTransactions(){
-        Transaction curreTransaction = null;
+        Transaction currentTransaction = null;
         boolean userExited = false;
 
         while(!userExited){
@@ -65,7 +65,7 @@ public class ATM{
                 case WITHDRAWAL:
                 case DEPOSIT:
                     currentTransaction = createTransaction(mainMenuSelection);
-                    currentTransaction.executy();
+                    currentTransaction.execute();
                     break;
 
                 case EXIT:
@@ -94,12 +94,14 @@ public class ATM{
         Transaction temp = null;
         switch(type){
             case BALANCE_INQUIRY:
-                temp = new BALANCE_INQUIRY(currentAccountNumber, screen, bankDatabase);
+                temp = new BalanceInquiry(currentAccountNumber, screen, bankDatabase);
                 break;
             case WITHDRAWAL:
                 temp = new Withdrawal(currentAccountNumber, screen, bankDatabase, keypad, cashDispenser);
+                break;
             case DEPOSIT:
                 temp = new Deposit(currentAccountNumber, screen, bankDatabase, keypad, depositSlot); 
+                break;
         }
         return temp;
 
